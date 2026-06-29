@@ -55,10 +55,11 @@ export default function EditJob() {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
+    <div className="container">
       <h1>Edit Job</h1>
 
       <form onSubmit={updateJob}>
+        <div className="card">
         <input
           name="title"
           value={job.title}
@@ -117,6 +118,7 @@ export default function EditJob() {
         <button type="submit">
           Update Job
         </button>
+      </div>
       </form>
     </div>
   );

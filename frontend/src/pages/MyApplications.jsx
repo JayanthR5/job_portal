@@ -28,22 +28,16 @@ setApplications(res.data);
   };
 
   return (
-    <div style={{ padding: "30px" }}>
+    <div className="container">
       <h1>My Applications</h1>
 
       {applications.length === 0 ? (
         <h3>No Applications Found</h3>
       ) : (
         applications.map((app) => (
-          <div
-            key={app.id}
-            style={{
-              border: "1px solid gray",
-              padding: "20px",
-              marginBottom: "20px",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="card" key={app.id}>
+            
+          
             <h2>Job ID: {app.job}</h2>
 
             <p>

@@ -48,7 +48,7 @@ export default function CreateJob() {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
+    <div className="container">
       <h1>Create Job</h1>
 
       <form onSubmit={createJob}>

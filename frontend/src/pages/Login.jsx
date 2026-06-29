@@ -1,9 +1,11 @@
 import { useState } from "react";
 import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const login = async (e) => {
     e.preventDefault();
@@ -16,6 +18,7 @@ export default function Login() {
 
       localStorage.setItem("access", res.data.access);
       localStorage.setItem("refresh", res.data.refresh);
+      navigate("/jobs");
 
       alert("Login Successful");
     } catch (err) {

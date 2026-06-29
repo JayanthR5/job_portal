@@ -21,49 +21,43 @@ export default function Jobs() {
 
       setJobs(response.data);
     } catch (error) {
-    console.log(error);
-    console.log(error.response);
-    console.log(error.response?.data);
-
-    alert(JSON.stringify(error.response?.data || error.message));
-}
+      console.log(error);
+      console.log(error.response?.data);
+      alert(JSON.stringify(error.response?.data || error.message));
+    }
   };
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h1>Available Jobs</h1>
+    <div className="container">
+
+      <h1 className="title">Available Jobs</h1>
 
       {jobs.length === 0 ? (
         <h3>No Jobs Found</h3>
       ) : (
         jobs.map((job) => (
-          <div
-            key={job.id}
-            style={{
-              border: "1px solid gray",
-              marginBottom: "20px",
-              padding: "20px",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="card" key={job.id}>
+
             <h2>{job.title}</h2>
 
-            <p><b>Company:</b> {job.company}</p>
+            <p><strong>Company:</strong> {job.company}</p>
 
-            <p><b>Location:</b> {job.location}</p>
+            <p><strong>Location:</strong> {job.location}</p>
 
-            <p><b>Job Type:</b> {job.job_type}</p>
+            <p><strong>Job Type:</strong> {job.job_type}</p>
 
-            <p><b>Salary:</b> ₹{job.salary}</p>
+            <p><strong>Salary:</strong> ₹{job.salary}</p>
 
             <p>{job.description}</p>
 
             <Link to={`/apply/${job.id}`}>
-    <button>Apply</button>
-</Link>
+              <button>Apply Now</button>
+            </Link>
+
           </div>
         ))
       )}
+
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function Profile() {
   if (!user) return <h2>Loading...</h2>;
 
   return (
-    <div style={{ padding: "30px" }}>
+    <div className="container">
       <h1>My Profile</h1>
 
       <p><b>Username:</b> {user.username}</p>
